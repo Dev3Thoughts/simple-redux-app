@@ -7,7 +7,6 @@ import Counter from "./Counter";
 // setup initial state
 const defaultState = {
   count: 0,
-  name: "Bobby",
 };
 
 // setup store
