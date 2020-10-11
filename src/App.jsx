@@ -1,4 +1,5 @@
 import React from "react";
+import { composeWithDevTools } from "redux-devtools-extension";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./redux/reducers";
@@ -10,7 +11,7 @@ const defaultState = {
 };
 
 // setup store
-const store = createStore(reducer, defaultState);
+const store = createStore(reducer, defaultState, composeWithDevTools());
 
 const App = () => {
   return (
