@@ -2,7 +2,7 @@ import React from "react";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import reducer from "./redux/reducers";
+import reducer from "./redux/reducers/reducers";
 import Counter from "./Counter";
 
 // setup initial state

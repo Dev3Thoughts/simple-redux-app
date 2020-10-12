@@ -1,4 +1,4 @@
-import { DECREASE, INCREASE, RESET } from "./actions";
+import { DECREASE, INCREASE, RESET } from "../actions/actions";
 
 //  reducer to updatae out store we need to arguments old and new state
 function reducer(state, action) {
