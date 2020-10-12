@@ -1,7 +1,8 @@
 import React from "react";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 import Counter from "./Counter";
 
 // reducers
@@ -11,6 +12,8 @@ import modalReducer from "./redux/reducers/modalReducer";
 
 // get components
 import Modal from "./Modal";
+import Products from "./Products";
+const middleware = [thunk];
 
 // setup store
 const store = createStore(
@@ -19,7 +22,7 @@ const store = createStore(
     productState: productReducer,
     modalState: modalReducer,
   }),
-  composeWithDevTools()
+  composeWithDevTools(applyMiddleware(...middleware))
 );
 
 const App = () => {
@@ -27,6 +30,7 @@ const App = () => {
     <Provider store={store}>
       <Counter />
       <Modal />
+      <Products />
     </Provider>
   );
 };

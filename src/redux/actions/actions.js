@@ -23,3 +23,15 @@ export const reset = () => {
 export const modalOpen = (name, text) => {
   return { type: MODAL_OPEN, payload: { name, text } };
 };
+
+export const setLoading = () => {
+  return { type: SET_LOADING };
+};
+export const getProducts = () => {
+  return async function (dispatch) {
+    dispatch(setLoading());
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await res.json();
+    dispatch({ type: GET_PRODUCTS, payload: data });
+  };
+};
