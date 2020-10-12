@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { DECREASE, INCREASE, RESET } from "./redux/actions/actions";
+import { DECREASE, INCREASE, RESET, MODAL_OPEN } from "./redux/actions/actions";
 
 function Counter({ count, increase, decrease, reset }) {
   return (
@@ -29,7 +29,13 @@ function mapDispatchToProps(dispatch) {
   return {
     increase: () => dispatch({ type: INCREASE }),
     decrease: () => dispatch({ type: DECREASE }),
-    reset: () => dispatch({ type: RESET }),
+    reset: () => {
+      dispatch({ type: RESET });
+      dispatch({
+        type: MODAL_OPEN,
+        payload: { name: "bla blu", text: "Bla bla bla bla bla" },
+      });
+    },
   };
 }
 

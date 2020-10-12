@@ -10,7 +10,7 @@ import productReducer from "./redux/reducers/productReducer";
 import modalReducer from "./redux/reducers/modalReducer";
 
 // get components
-import Modal from "./Modal"
+import Modal from "./Modal";
 
 // setup store
 const store = createStore(
