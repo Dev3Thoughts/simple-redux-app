@@ -22,8 +22,8 @@ function Counter({ count, increase, decrease, reset }) {
   );
 }
 
-function mapStateToProps(state) {
-  return { count: state.count };
+function mapStateToProps({ countState }) {
+  return { count: countState.count };
 }
 function mapDispatchToProps(dispatch) {
   return {
